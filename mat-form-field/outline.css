@@ -1,0 +1,49 @@
+
+.mat-form-field {
+  position: relative;
+  font-family: Arial, sans-serif;
+  margin-bottom: 16px;
+}
+
+/* before */
+.mat-form-field label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  color: gray;
+  font-size: 14px;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+  pointer-events: none;
+  background-color: white; 
+  padding: 0 4px; 
+}
+
+.mat-form-field .mat-input {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.mat-form-field .mat-input:focus {
+  outline: none;
+  border-color: red;
+}
+
+.mat-form-field .mat-input:focus + label,
+.mat-form-field .mat-input:not(:placeholder-shown) + label {
+  top: 0% !important; /* keep it positioned use !important*/
+  font-size: 12px;
+  color: #007bff;
+  display: block;
+}
+
+.mat-form-field .mat-input:valid:not(:focus) + label {
+  top: 50%; 
+  font-size: 12px;
+  color: green;
+}
